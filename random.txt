@@ -1,17 +1,6 @@
-This is a random file Chapter \ref{blas} that has to be read para by para. What do you need to do about the para. What do you do about this line. What\cite{crap} I like about this that it is violence witout Section~\ref{blas} paperwork.
+This is a random file Chapter~\ref{blas} that has to be read para by para. What do you need to do about the para. What do you do about this line. What~\cite{crap} I like about this that it is violence witout Section~\ref{blas} paperwork.
 
-goal is something I want to do.I chapter~\ref{blas} would ahve been a good keeper for the game. Et the world be as it eh? Goal is is something I want to do. I~\cite{blah} would ahve been a good keeper for the game. Let~\cite{blahblah} the section \ref{awesomeness} world be as it eh? Lorem ipsum is also another option for this. What a is the problem is the problem. 
-
-
-
-
-
-
-
-
-
-
-
+Goal is something I want to do. I Chapter~\ref{blas} would ahve been a good keeper for the game. Et the world be as it eh? Goal is something I want to do. I~\cite{blah} would ahve been a good keeper for the game. Let~\cite{blahblah} the Section~\ref{awesomeness} world be as it eh? Lorem ipsum is also another option for this. What a is the problem. 
 
 
 
