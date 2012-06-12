@@ -1,0 +1,13 @@
+Regex + Python to clean up my writing
+
+After shifting to using latex (with sublime text) for writing, one of the things I've found rather irritating is correcting the silly mistakes I keep making. These are things like accidentally putting two spaces adjacent to each other, repeating phrases and forgetting to capitalize letters in the right places. Word used to make things easier with it's spell check. There is a dictionary in sublime text but it works only for spelling mistakes and those aren't always the problem. Checking the PDF and going through them looking for mistakes was obviously quite irritating.
+
+Initial Solution
+
+It was around this time I made a list of standard regexes that I could search for and replace using sublime text's in built search. I put these in my sublime text cheat sheet for easy access. I'd just copy these from the cheat sheet and paste into the search bar and fix each error as I saw it. Obviously quite time consuming. I intended on automating this but thought java would be too inconvenient and I had no clue how to do this in a bash script. With all the other checks I had to do like whether the text appeared in a comment or an equation block or something I had no clue how to do this in a simple bash script.
+
+It was at this time I was reading about someone using regexes in Python and I realised this would be an interesting way to improve my limited python skills and do something useful. And I set about making a python script that checks for the common mistakes I make (the regexes in my cheatsheet) and makes the appropriate suggestions for replacements and updates the file.
+
+Adding new regex patterns and ways in which it has to be replaced is as simple as writing a simple function and adding a line to the list of patterns to be tested. I still need to do some basic testing on it and add more patterns but I've put the code up on GitHub already and would be extremely grateful to anyone who checks it and gives any suggestions. I will update the Readme file very soon.
+
+Finally, using the idea of functions being first class members in python for the first time was super interesting and super useful. Brings to mind a brilliant rant by Steve Yegge on java and functional programming: http://steve-yegge.blogspot.sg/2006/03/execution-in-kingdom-of-nouns.html.
