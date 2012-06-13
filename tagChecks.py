@@ -1,4 +1,4 @@
-from extractPhrases import *
+from extractPhrases import *        
 
 def checkPattern(option, match, line):
     if option =='t':
