@@ -8,6 +8,8 @@ from tagChecks import *
 import sys
 
 def dealWithIt(match, para, replacementFunction):
+    """ Deals with a pattern match. Checks for replacement, displays it for user and asks what to do with 
+    it"""
     replacement =  suggestReplacement(match, para, replacementFunction)
     while True:
         print "Suggested replacement:",replacement
@@ -26,9 +28,11 @@ def dealWithIt(match, para, replacementFunction):
             print "invalid choice"
 
 def suggestReplacement(match, para, replacementFunction):
+    """ Calls the replacement function with the right arguments"""
     return replacementFunction(match, para)
 
-def writeToFile(group):
+def saveChanges(group):
+     """ Saves the changes that are made."""
     # for para in group:
     #     print para  
     tempFileName = fileName +".temp"  
@@ -44,10 +48,12 @@ def writeToFile(group):
 
 # paragraph_lists = []
 for fileName in sys.argv[1:]:
+    """ Checks for each file passed as argument """
     print "//////////////Checking ", fileName, "/////////////////////"
     print "********************"
     group = []
     with open(fileName) as f:
+        """ Generate paragraphs and store in the list group"""
         paras = paragraphs(f)
         for para in paras:
             group.append(para)
@@ -56,19 +62,25 @@ for fileName in sys.argv[1:]:
     newContent =""
     matched = False
     for iteration in range(1,3,1):
+        """ Iterate twice so that all patterns are checked for. Still no garantuee that all corrections have been 
+        made. Since corrections might bring new errors."""
         for pattern in patterns.keys():
+            """ Iterates through each given pattern"""
             # print count 
             count=count+1
             flag = False
             for index, para in enumerate(group):
+                """ Checks each para for that pattern"""
                 regex = re.compile(pattern)
                 # m = re.findall(pattern,line)
             #   writeFile.write(line.replace("tutu","random"))
                 replaced = True
                 while (replaced):
+                    """ if replaced then have to do the check again """
                     if replaced:
                         replaced = False;
                     for match in regex.finditer(para):
+                        """ Iterates through all the matches in each para """
                         for option in patterns[pattern][1]:
                             if(checkPattern(option, match, para)):
                                 flag= True
@@ -89,7 +101,7 @@ for fileName in sys.argv[1:]:
         print "No mistakes found. Good Stuff!"
     else:
         print "Corrections made in ", fileName
-        writeToFile(group)
+        saveChanges(group)
         matched = False
 
 

@@ -1,6 +1,6 @@
-
 def extractPhrase(match, line):
-    """Returns the phrase which was matched """
+    """Returns the phrase which was matched. Rather than just the matched pattern, it returns 
+    the complete phrase in which the match occured """
     startCount=0
     endCount= len(line)
     for i in range(match.start()-1,-1,-1):
@@ -14,7 +14,7 @@ def extractPhrase(match, line):
     return line[startCount:endCount]
 
 def extractPreviousPhrase(match, line):
-    """Returns the phrase which was matched """
+    """Returns the phrase before the one that was matched"""
     startCount=0
     endCount= 0
     for i in range(match.start()-1,-1,-1):
@@ -28,7 +28,7 @@ def extractPreviousPhrase(match, line):
     return line[startCount:endCount]
 
 def extractNextPhrase(match, line):
-    """Returns the phrase which was matched """
+    """Returns the phrase after the one which was matched."""
     startCount=0
     endCount= 0
     for i in range(match.end()+1,len(line),1):
@@ -42,7 +42,8 @@ def extractNextPhrase(match, line):
     return line[startCount:endCount]
 
 def paragraphs(fileobj, separator='\n'):
-    """Iterate a fileobject by paragraph"""
+    """Iterate a fileobject by paragraph and create a generator from which the list of paragraphs can be 
+    extracted"""
     ## Makes no assumptions about the encoding used in the file
     lines = []
     for line in fileobj:

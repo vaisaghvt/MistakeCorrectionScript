@@ -31,13 +31,14 @@ def isInTag(phrase):
         return False
 
 def isInCite(phrase):
-    '''Returns a true if the match is any tag'''
+    '''Returns a true if the match is in Cite'''
     if(phrase.rfind(r'\cite')==0):
         return True
     else :
         return False
 
 def inLineEquation(match, line):
+    """ Returns true if in inline equation"""
     hasDollarTagBefore=False
     for i in range(match.start()-1,-1,-1):
         if line[i] == '$':
