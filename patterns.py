@@ -1,6 +1,24 @@
+from string import *
+
+def isAlpha(letter):
+    if (letter>='A' and letter<='Z') or (letter>='a' and letter<='z'):
+        return True
+    return False 
+
+def isUpper(letter):
+    if (letter>='A' and letter<='Z'):
+        return True
+    return False 
+
+def isLower(letter):
+    if (letter>='a' and letter<='z'):
+        return True
+    return False 
+
+
 def removeSpaceBeforePunctuation(match, para):
     """ Match   :   Space before punctuation 
-        Fix     :   Remove space before punctuation"""
+    Fix     :   Remove space before punctuation"""
     if match.start()==0:
         newPara = para[1:len(para)]
     for i in range(match.start(), match.end(), 1):
@@ -10,7 +28,7 @@ def removeSpaceBeforePunctuation(match, para):
 
 def addSpaceAfterPunctuation(match, para):
     """ Match   :   Letter right after punctuation
-        Fix     :   Add a space after punctuation"""
+    Fix     :   Add a space after punctuation"""
     for i in range(match.start(), match.end(), 1):
         if para[i] == "." or para[i] == "," or para[i] == ";" or para[i] == ":":
             newPara = para[0:i+1] + " " +para[i+1:len(para)]
@@ -18,7 +36,7 @@ def addSpaceAfterPunctuation(match, para):
 
 def capitalizeFirst(match, para):
     """ Match   :   Space before punctuation 
-        Fix     :   Remove space before punctuation"""
+    Fix     :   Remove space before punctuation"""
     if match.start()==0:
         newPara = para[0].upper() +para[1:len(para)]
     for i in range(match.start(), match.end(), 1):
@@ -28,12 +46,12 @@ def capitalizeFirst(match, para):
 
 def removeExtraSpaces(match, para):  
     """ Match   :   Multiple spaces
-        Fix     :   Replace with single space""" 
+    Fix     :   Replace with single space""" 
     return para[0: match.start()]+" "+para[match.end():len(para)]
 
 def addTildeBeforeCite(match, para):
     """ Match   :   /cite without a tilde before. Either a space or a letter.
-        Fix     :   Remove any spaces and replace with tilde."""
+    Fix     :   Remove any spaces and replace with tilde."""
     for i in range(match.start(), match.end(), 1):
         if para[i] == "\\":
             if para[i-1]==' ':
@@ -45,8 +63,8 @@ def addTildeBeforeCite(match, para):
 
 
 def capitalizeChapter(match, para):
-     """ Match   :   Chapter reference with 'c' not capital in chapter.
-         Fix     :   Capitalize the 'c' in chapter."""
+    """ Match   :   Chapter reference with 'c' not capital in chapter.
+    Fix     :   Capitalize the 'c' in chapter."""
     if match.start()==0:
         newPara = para[0].upper() +para[1:len(para)]
     for i in range(match.start(), match.end(), 1):
@@ -56,7 +74,7 @@ def capitalizeChapter(match, para):
 
 def capitalizeSection(match, para):
     """ Match   :   Section reference with 's' not capital in section.
-         Fix     :   Capitalize the 's' in section."""
+    Fix     :   Capitalize the 's' in section."""
     if match.start()==0:
         newPara = para[0].upper() +para[1:len(para)]
     for i in range(match.start(), match.end(), 1):
@@ -66,7 +84,7 @@ def capitalizeSection(match, para):
 
 def convertToTitleCase(match, para):
     """ Match   :   Non title case section or chapter heading.
-        Fix     :   Change to title case"""
+    Fix     :   Change to title case"""
     for i in range(match.end(), len(para), 1):
         if para[i] == '{':
             pos =i
@@ -97,8 +115,8 @@ def convertToTitleCase(match, para):
 
 
 def convertFirstLetterToCapital(match, para):
-     """    Match   :   Non sentence case sub or sub sub section.
-            Fix     :   Change to sentence case"""
+    """    Match   :   Non sentence case sub or sub sub section.
+    Fix     :   Change to sentence case"""
     for i in range(match.end(), len(para), 1):
         if para[i] == '{':
             pos =i
@@ -131,8 +149,8 @@ def convertFirstLetterToCapital(match, para):
 
 
 def removeRepeatedPhrase(match ,para):
-     """ Match   :   Repeated phrase.
-        Fix     :   Remove repeated phrase"""
+    """ Match   :   Repeated phrase.
+    Fix     :   Remove repeated phrase"""
     newpara= para[0:match.start()]+ para[match.start():match.start()+ (match.end()-match.start())/2]+para[match.end()-1:len(para)]
     return newpara
 
@@ -144,9 +162,9 @@ patterns = {r' [\.,;:]':["SPACE BEFORE PUNCTUATION.",'tace',removeSpaceBeforePun
             r'[^~]\\cite|[^~]\\ref':["TILDE MARK NEEDED BEFORE CITE",'ace',addTildeBeforeCite],
             r'([^C]|c)hapter~\\ref':["CAPITALIZE C IN CHAPTER", 'c', capitalizeChapter],
             r'([^S]|s)ection~\\ref':["CAPITALIZE S IN SECTION", 'c', capitalizeSection],
-            r'\\section|\\chapter':["TITLE CASE FOR SECTIONS AND CHAPTERS", 'c', convertToTitleCase],
-            r'\\(sub)+section':["ONLY FIRST WORD CAPITALIZED IN SUBSECTIONS", 'c', convertFirstLetterToCapital],
-            r' ( )+':["TOO MANY SPACES", 'tce', removeExtraSpaces],
+            # r'\\section|\\chapter':["TITLE CASE FOR SECTIONS AND CHAPTERS", 'c', convertToTitleCase],
+            # r'\\(sub)+section':["ONLY FIRST WORD CAPITALIZED IN SUBSECTIONS", 'c', convertFirstLetterToCapital],
+            r' ( )+':["TOO MANY SPACES", 'tcefb', removeExtraSpaces],
             r'(?i)([ ]+||^)([a-zA-Z][a-zA-Z ]*)[^a-zA-Z0-9]+\2([ \.,;]|$|)':["REPEATED PHRASE",'i',removeRepeatedPhrase]
             }
 
@@ -160,10 +178,10 @@ def extractNextWord(pos, para):
             word += para[i]
 
 def capitalizeFirstLetter(word):
-    return toUpper(word[0]) + word[1: len(word)]
+    return upper(word[0]) + word[1: len(word)]
 
 def uncapitalizeFirstLetter(word):
-    return toLower(word[0]) + word[1: len(word)]
+    return lower(word[0]) + word[1: len(word)]
 
 def notFullyCapital(word):
     """ Checks whether the word is fully capital. If so , it is likely to be some sort of abbreviation or acronym."""

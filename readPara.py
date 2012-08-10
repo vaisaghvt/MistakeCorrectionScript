@@ -32,10 +32,10 @@ def suggestReplacement(match, para, replacementFunction):
     return replacementFunction(match, para)
 
 def saveChanges(group):
-     """ Saves the changes that are made."""
+    """ Saves the changes that are made."""
     # for para in group:
     #     print para  
-    tempFileName = fileName +".temp"  
+    tempFileName = fileName+".temp"  
     with open(tempFileName,"w") as writeFile:
         for para in group:
             writeFile.write(para+'\n')
@@ -64,25 +64,32 @@ for fileName in sys.argv[1:]:
     for iteration in range(1,3,1):
         """ Iterate twice so that all patterns are checked for. Still no garantuee that all corrections have been 
         made. Since corrections might bring new errors."""
+        # print 'outermost loop'
         for pattern in patterns.keys():
             """ Iterates through each given pattern"""
             # print count 
             count=count+1
             flag = False
+            # print 'inner loop'
             for index, para in enumerate(group):
                 """ Checks each para for that pattern"""
                 regex = re.compile(pattern)
+                # print 'inner inner loop'
                 # m = re.findall(pattern,line)
             #   writeFile.write(line.replace("tutu","random"))
                 replaced = True
                 while (replaced):
                     """ if replaced then have to do the check again """
+                    # print 'inner inner inner loop'
                     if replaced:
                         replaced = False;
                     for match in regex.finditer(para):
                         """ Iterates through all the matches in each para """
+                        # print 'matching loop'
                         for option in patterns[pattern][1]:
+                            # print 'option check loop'
                             if(checkPattern(option, match, para)):
+                                # print 'flag true'
                                 flag= True
                                 break
                         if flag:

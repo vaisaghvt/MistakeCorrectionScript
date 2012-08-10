@@ -2,15 +2,24 @@ from extractPhrases import *
 
 def checkPattern(option, match, line):
     if option =='t':
+        # print 'checking tag'
         return isInTag(extractPhrase(match, line))
     elif option =='a':
-         return isAcronym(extractPhrase(match, line))
+        # print 'checking acronym'
+        return isAcronym(extractPhrase(match, line))
     elif option =='c':
+        # print 'checking comment'
         return isComment(match, line)
     elif option =='e':
-       return isEquation(match, line)
+        # print 'checking equation'
+        return isEquation(match, line)
     elif option =='i':
-       return isInComplete(match, line)
+        # print 'checking completion'
+        return isInComplete(match, line)
+    elif option =='f':
+        return isFigure(match, line)
+    elif option =='b':
+        return isTable(match, line)
 
 def isAcronym(phrase):
     '''Returns a true if the match is an acronym'''
@@ -55,9 +64,37 @@ def inEquationBody(match, line):
     end= line[0:match.start()].rfind(r'\end{equation}')
     pos= 0
     while(end!=-1):
-        pos= end
+        pos= end+3
+        # print pos, 'line', line[pos:match.start()]
         end= line[pos:match.start()].rfind(r'\end{equation}')
+        # print '*******'
     beg=line[pos:match.start()].rfind(r'\begin{equation}')
+    if(beg!=-1):
+        return True     
+    return False
+
+def isFigure(match, line):
+    end= line[0:match.start()].rfind(r'\end{figure}')
+    pos= 0
+    while(end!=-1):
+        pos= end+3
+        # print pos, 'line', line[pos:match.start()]
+        end= line[pos:match.start()].rfind(r'\end{figure}')
+        # print '*******'
+    beg=line[pos:match.start()].rfind(r'\begin{figure}')
+    if(beg!=-1):
+        return True     
+    return False
+
+def isTable(match, line):
+    end= line[0:match.start()].rfind(r'\end{table}')
+    pos= 0
+    while(end!=-1):
+        pos= end+3
+        # print pos, 'line', line[pos:match.start()]
+        end= line[pos:match.start()].rfind(r'\end{table}')
+        # print '*******'
+    beg=line[pos:match.start()].rfind(r'\begin{table}')
     if(beg!=-1):
         return True     
     return False

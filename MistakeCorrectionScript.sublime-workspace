@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"rand",
+				"randint"
+			],
+			[
 				"ingre",
 				"ingredient"
 			],
@@ -67,6 +71,70 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "random.txt",
+			"settings":
+			{
+				"buffer_size": 589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tagChecks.py",
+			"settings":
+			{
+				"buffer_size": 4035,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readPara.py",
+			"settings":
+			{
+				"buffer_size": 4318,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/vaisaghvt/Desktop/generateQuestions.py",
+			"settings":
+			{
+				"buffer_size": 550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "patterns.py",
+			"settings":
+			{
+				"buffer_size": 6945,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Getch.py",
+			"settings":
+			{
+				"buffer_size": 960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "extractPhrases.py",
+			"settings":
+			{
+				"buffer_size": 1945,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Blog post",
+			"settings":
+			{
+				"buffer_size": 2314,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -156,6 +224,9 @@
 	},
 	"file_history":
 	[
+		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/readPara.py",
+		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/patterns.py",
+		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/extractPhrases.py",
 		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/Blog post",
 		"/Users/vaisaghvt/Dropbox/LiteratureReview.tex",
 		"/Users/vaisaghvt/Desktop/random",
@@ -387,8 +458,228 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "random.txt",
+					"settings":
+					{
+						"buffer_size": 589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								589,
+								589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tagChecks.py",
+					"settings":
+					{
+						"buffer_size": 4035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "readPara.py",
+					"settings":
+					{
+						"buffer_size": 4318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1570,
+								1541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 781.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/vaisaghvt/Desktop/generateQuestions.py",
+					"settings":
+					{
+						"buffer_size": 550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "patterns.py",
+					"settings":
+					{
+						"buffer_size": 6945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Getch.py",
+					"settings":
+					{
+						"buffer_size": 960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "extractPhrases.py",
+					"settings":
+					{
+						"buffer_size": 1945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 397.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Blog post",
+					"settings":
+					{
+						"buffer_size": 2314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
