@@ -96,18 +96,34 @@
 			}
 		},
 		{
-			"file": "/Users/vaisaghvt/Desktop/generateQuestions.py",
+			"file": "/C/Users/vaisagh/Dropbox/ProjectLauncher/TerminalApp.py",
 			"settings":
 			{
-				"buffer_size": 550,
+				"buffer_size": 7678,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "patterns.py",
+			"file": "/C/Users/vaisagh/Dropbox/ProjectLauncher/appLauncher.py",
 			"settings":
 			{
-				"buffer_size": 6945,
+				"buffer_size": 3737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/vaisagh/Dropbox/lab materials/generateQuestions.py",
+			"settings":
+			{
+				"buffer_size": 3553,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/vaisagh/Desktop/output/BCE1/czhang017/czhang017_attempt_2012-10-08-12-34-38.txt",
+			"settings":
+			{
+				"buffer_size": 606,
 				"line_ending": "Unix"
 			}
 		},
@@ -224,6 +240,9 @@
 	},
 	"file_history":
 	[
+		"/Users/vaisaghvt/Desktop/generateQuestions.py",
+		"/C/Users/vaisagh/Dropbox/MistakeCorrectionScript/patterns.py",
+		"/Users/vaisaghvt/Desktop/antigravity.py",
 		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/readPara.py",
 		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/patterns.py",
 		"/Users/vaisaghvt/Dropbox/MistakeCorrectionScript/extractPhrases.py",
@@ -282,9 +301,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"",
 			"*.java",
 			"*.tex",
 			""
@@ -292,9 +312,12 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"main",
+			"defaultdict",
+			"defaultDict",
 			"dealWithIt",
 			"removeREpeated",
 			"removeREpeater",
@@ -419,10 +442,7 @@
 			"it's",
 			" :",
 			"[^.]$",
-			"[^~]\\(",
-			" \\(",
-			"[^~]\\(",
-			".\\("
+			"[^~]\\("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -458,7 +478,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -538,31 +558,87 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 781.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/Users/vaisaghvt/Desktop/generateQuestions.py",
+					"file": "/C/Users/vaisagh/Dropbox/ProjectLauncher/TerminalApp.py",
 					"settings":
 					{
-						"buffer_size": 550,
+						"buffer_size": 7678,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								392,
-								392
+								7678,
+								7678
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1619.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/vaisagh/Dropbox/ProjectLauncher/appLauncher.py",
+					"settings":
+					{
+						"buffer_size": 3737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								698,
+								698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/vaisagh/Dropbox/lab materials/generateQuestions.py",
+					"settings":
+					{
+						"buffer_size": 3553,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								47
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -571,11 +647,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "patterns.py",
+					"buffer": 6,
+					"file": "/C/Users/vaisagh/Desktop/output/BCE1/czhang017/czhang017_attempt_2012-10-08-12-34-38.txt",
 					"settings":
 					{
-						"buffer_size": 6945,
+						"buffer_size": 606,
 						"regions":
 						{
 						},
@@ -588,9 +664,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -599,7 +673,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "Getch.py",
 					"settings":
 					{
@@ -627,7 +701,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "extractPhrases.py",
 					"settings":
 					{
@@ -649,13 +723,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 397.0,
+						"translation.y": 648.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "Blog post",
 					"settings":
 					{
