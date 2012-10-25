@@ -1,4 +1,5 @@
-from extractPhrases import *        
+from extractPhrases import * 
+from urlparse import urlparse       
 
 def checkPattern(option, match, line):
     if option =='t':
@@ -20,6 +21,17 @@ def checkPattern(option, match, line):
         return isFigure(match, line)
     elif option =='b':
         return isTable(match, line)
+    elif option =='h':
+        return isInHyperLink(extractPhrase(match, line))
+
+def isInHyperLink(phrase):
+    phrase=phrase.strip()
+    phrase = phrase[:-1]
+
+    o = urlparse(phrase)
+    if len(o.netloc) >0 :
+        return True
+    return False
 
 def isAcronym(phrase):
     '''Returns a true if the match is an acronym'''

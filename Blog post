@@ -11,3 +11,8 @@ It was at this time I was reading about someone using regexes in Python and I re
 Adding new regex patterns and ways in which it has to be replaced is as simple as writing a simple function and adding a line to the list of patterns to be tested. I still need to do some basic testing on it and add more patterns but I've put the code up on GitHub already and would be extremely grateful to anyone who checks it and gives any suggestions. I will update the Readme file very soon.
 
 Finally, using the idea of functions being first class members in python for the first time was super interesting and super useful. Brings to mind a brilliant rant by Steve Yegge on java and functional programming: http://steve-yegge.blogspot.sg/2006/03/execution-in-kingdom-of-nouns.html.
+
+
+
+
+
