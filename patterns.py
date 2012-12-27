@@ -1,28 +1,10 @@
 from string import *
-
-
-def isAlpha(letter):
-    if letter >= 'A' and letter <= 'Z' or letter >= 'a' and letter \
-        <= 'z':
-        return True
-    return False
-
-
-def isUpper(letter):
-    if letter >= 'A' and letter <= 'Z':
-        return True
-    return False
-
-
-def isLower(letter):
-    if letter >= 'a' and letter <= 'z':
-        return True
-    return False
+from extractPhrases import *
 
 
 def removeSpaceBeforePunctuation(match, para):
     """
-    Match   :   Space before punctuation 
+    Match   :   Space before punctuation
     Fix     :   Remove space before punctuation"""
 
     if match.start() == 0:
@@ -45,7 +27,7 @@ def addSpaceAfterPunctuation(match, para):
 
 
 def capitalizeFirst(match, para):
-    """ Match   :   Space before punctuation 
+    """ Match   :   Space before punctuation
     Fix     :   Remove space before punctuation"""
 
     if match.start() == 0:
@@ -123,7 +105,7 @@ def convertToTitleCase(match, para):
             newPara += para[pos]
             if count == 0:
                 break
-        if isAlpha(para[pos]):
+        if para[pos].isalpha():
             (nextWord, pos) = extractNextWord(pos, para)
             if forceCapitalize:
                 newPara += capitalizeFirstLetter(nextWord)
@@ -163,7 +145,7 @@ def convertFirstLetterToCapital(match, para):
             newPara += para[pos]
             if count == 0:
                 break
-        if isAlpha(para[pos]):
+        if para[pos].isalpha():
             (nextWord, pos) = extractNextWord(pos, para)
             if forceCapitalize:
                 newPara += capitalizeFirstLetter(nextWord)
@@ -188,35 +170,23 @@ def removeRepeatedPhrase(match, para):
 
 # Store this in a dictionary with a short hand description, tags and the replacementFunction for the tag
 
-patterns = {  # r'\\section|\\chapter':["TITLE CASE FOR SECTIONS AND CHAPTERS", 'c', convertToTitleCase],
-              # r'\\(sub)+section':["ONLY FIRST WORD CAPITALIZED IN SUBSECTIONS", 'c', convertFirstLetterToCapital],
-    r' [\.,;:]': ['SPACE BEFORE PUNCTUATION.', 'taceh',
-                  removeSpaceBeforePunctuation],
-    r'[\.,;:][a-zA-Z]': ['NO SPACE AFTER PUNCTUATION.', 'taceh',
-                         addSpaceAfterPunctuation],
-    r'([\.] [a-z])|^[a-z]': ['MISSING CAPITALIZATION OF FIRST WORD AFTER FULL STOP.'
-                             , 'tace', capitalizeFirst],
-    r'[^~]\\cite|[^~]\\ref': ['TILDE MARK NEEDED BEFORE CITE', 'ace',
-                              addTildeBeforeCite],
-    r'chapter~\\ref': ['CAPITALIZE C IN CHAPTER', 'c',
-                       capitalizeChapter],
-    r'section~\\ref': ['CAPITALIZE S IN SECTION', 'c',
-                       capitalizeSection],
-    r' ( )+': ['TOO MANY SPACES', 'tcefb', removeExtraSpaces],
-    r'(?i)([ ]+||^)([a-zA-Z][a-zA-Z ]*)[^a-zA-Z0-9]+\2([ \.,;]|$|)': ['REPEATED PHRASE'
-            , 'i', removeRepeatedPhrase],
-    }
 
+patterns = [
+    # r'\\section|\\chapter':["TITLE CASE FOR SECTIONS AND CHAPTERS", 'c', convertToTitleCase],
+    # r'\\(sub)+section':["ONLY FIRST WORD CAPITALIZED IN SUBSECTIONS", 'c', convertFirstLetterToCapital],
+    {"regex":r' [\.,;:]',               "description":'SPACE BEFORE PUNCTUATION.',  "tags":'taceh',     "function":removeSpaceBeforePunctuation},
+    {"regex":r'[\.,;:][a-zA-Z]',        "description":'NO SPACE AFTER PUNCTUATION.',"tags":'taceh',     "function":addSpaceAfterPunctuation},
+    {"regex":r'([\.] [a-z])|^[a-z]',    "description":'MISSING CAPITALIZATION OF FIRST WORD AFTER FULL STOP.',
+                                                                                    "tags":'tace',      "function":capitalizeFirst},
+    {"regex":r'[^~]\\cite|[^~]\\ref',   "description":'TILDE MARK NEEDED BEFORE CITE',
+                                                                                    "tags":'ace',       "function":addTildeBeforeCite},
+    {"regex":r'chapter~\\ref',          "description":'CAPITALIZE C IN CHAPTER',    "tags":'c',         "function":capitalizeChapter},
+    {"regex":r'section~\\ref',          "description": 'CAPITALIZE S IN SECTION',   "tags":'c',         "function":capitalizeSection},
+    {"regex":r' ( )+',                  "description":'TOO MANY SPACES',            "tags":'tcefb',     "function":removeExtraSpaces},
+    {"regex":r'(?i)([ ]+||^)([a-zA-Z][a-zA-Z ]*)[^a-zA-Z0-9]+\2([ \.,;]|$|)',
+                                        "description":'REPEATED PHRASE',            "tags":'i',         "function":removeRepeatedPhrase},
+    ]
 
-def extractNextWord(pos, para):
-    """ Returns the word starting at passed position"""
-
-    word = ''
-    for i in range(pos, len(para), 1):
-        if para[i] == ' ' or not isAlpha(para[i]):
-            return (word, i)
-        else:
-            word += para[i]
 
 
 def capitalizeFirstLetter(word):
@@ -229,10 +199,5 @@ def uncapitalizeFirstLetter(word):
 
 def notFullyCapital(word):
     """ Checks whether the word is fully capital. If so , it is likely to be some sort of abbreviation or acronym."""
-
-    for i in range(0, len(word), 1):
-        if isLower(word[i]):
-            return True
-    return False
-
+    return not word.isupper()
 

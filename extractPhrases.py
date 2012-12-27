@@ -1,6 +1,6 @@
 
 def extractPhrase(match, line):
-    """Returns the phrase which was matched. Rather than just the matched pattern, it returns 
+    """Returns the phrase which was matched. Rather than just the matched pattern, it returns
     the complete phrase in which the match occured """
 
     startCount = 0
@@ -48,19 +48,15 @@ def extractNextPhrase(match, line):
     return line[startCount:endCount]
 
 
-def paragraphs(fileobj, separator='\n'):
-    """Iterate a fileobject by paragraph and create a generator from which the list of paragraphs can be 
-    extracted"""
+def extractNextWord(pos, para):
+    """ Returns the word starting at passed position"""
 
-    # # Makes no assumptions about the encoding used in the file
-
-    lines = []
-    for line in fileobj:
-        if line == separator and lines:
-            yield ''.join(lines)
-            lines = []
+    word = ''
+    for i in range(pos, len(para)):
+        if para[i] == ' ' or not para[i].isalpha():
+            return (word, i)
         else:
-            lines.append(line)
-    yield ''.join(lines)
+            word += para[i]
+
 
 
