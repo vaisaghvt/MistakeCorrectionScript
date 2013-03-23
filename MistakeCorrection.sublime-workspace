@@ -75,18 +75,15 @@
 			"file": "extractPhrases.py",
 			"settings":
 			{
-				"buffer_size": 2036,
+				"buffer_size": 1820,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "#!/usr/bin/python\n# -*- coding: utf-8 -*-\n## {{{ http://code.activestate.com/recipes/134892/ (r2)\n\n\nclass _Getch:\n\n    \"\"\"Gets a single character from standard input.  Does not echo to the\nscreen.\"\"\"\n\n    def __init__(self):\n        try:\n            self.impl = _GetchWindows()\n        except ImportError:\n            self.impl = _GetchUnix()\n\n    def __call__(self):\n        return self.impl()\n\n\nclass _GetchUnix:\n\n    def __init__(self):\n        import tty\n        import sys\n\n    def __call__(self):\n        import sys\n        import tty\n        import termios\n        fd = sys.stdin.fileno()\n        old_settings = termios.tcgetattr(fd)\n        try:\n            tty.setraw(sys.stdin.fileno())\n            ch = sys.stdin.read(1)\n        finally:\n            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)\n        return ch\n\n\nclass _GetchWindows:\n\n    def __init__(self):\n        import msvcrt\n\n    def __call__(self):\n        import msvcrt\n        return msvcrt.getch()\n\n\ngetch = _Getch()\n\n## end of http://code.activestate.com/recipes/134892/ }}}\n",
 			"file": "Getch.py",
-			"file_size": 960,
-			"file_write_time": 1338663185000000,
 			"settings":
 			{
-				"buffer_size": 1059,
+				"buffer_size": 1017,
 				"line_ending": "Unix"
 			}
 		},
@@ -94,7 +91,7 @@
 			"file": "patterns.py",
 			"settings":
 			{
-				"buffer_size": 7399,
+				"buffer_size": 7197,
 				"line_ending": "Unix"
 			}
 		}
@@ -443,15 +440,15 @@
 					"file": "extractPhrases.py",
 					"settings":
 					{
-						"buffer_size": 2036,
+						"buffer_size": 1820,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								330,
-								330
+								0,
+								0
 							]
 						],
 						"settings":
@@ -549,7 +546,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 128.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -559,15 +556,15 @@
 					"file": "Getch.py",
 					"settings":
 					{
-						"buffer_size": 1059,
+						"buffer_size": 1017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1059,
-								1059
+								1017,
+								1017
 							]
 						],
 						"settings":
@@ -675,15 +672,15 @@
 					"file": "patterns.py",
 					"settings":
 					{
-						"buffer_size": 7399,
+						"buffer_size": 7197,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								469,
-								469
+								0,
+								0
 							]
 						],
 						"settings":
@@ -780,8 +777,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 8.0,
-						"translation.y": 24.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
